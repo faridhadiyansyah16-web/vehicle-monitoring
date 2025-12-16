@@ -62,6 +62,10 @@ php -S 127.0.0.1:8010 server.php
 
 ## Akun dan Akses
 - Rute aplikasi berada di balik autentikasi (`auth`). Buat akun melalui halaman register atau seeding sesuai kebutuhan.
+- Akun default (hasil seeding bawaan):
+  - Email: `test@example.com`
+  - Password: `password`
+  - Role: `user` (ubah ke `admin`/`approver` via update user jika diperlukan)
 
 ## Ekspor Data
 - CSV pemesanan: `GET /reports/bookings.csv` (mengikuti query filter)
