@@ -24,6 +24,9 @@
                 @if(auth()->check() && auth()->user()->isApprover())
                 <li class="nav-item"><a class="nav-link" href="{{ route('approvals.index') }}">Persetujuan</a></li>
                 @endif
+                @if(auth()->check() && auth()->user()->isAdmin())
+                <li class="nav-item"><a class="nav-link" href="{{ route('users.index') }}">Users</a></li>
+                @endif
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Export

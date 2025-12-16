@@ -89,4 +89,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/reports/fuel_logs.xlsx', [\App\Http\Controllers\ReportController::class, 'fuelLogsExcel'])->name('reports.fuel_logs_excel');
     Route::get('/reports/service_logs.xlsx', [\App\Http\Controllers\ReportController::class, 'serviceLogsExcel'])->name('reports.service_logs_excel');
     Route::get('/reports/usage.xlsx', [\App\Http\Controllers\ReportController::class, 'usageExcel'])->name('reports.usage_excel');
+
+    Route::get('/users', [\App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+    Route::get('/users/create', [\App\Http\Controllers\UserController::class, 'create'])->name('users.create');
+    Route::post('/users', [\App\Http\Controllers\UserController::class, 'store'])->name('users.store');
+    Route::get('/users/{user}/edit', [\App\Http\Controllers\UserController::class, 'edit'])->name('users.edit');
+    Route::put('/users/{user}', [\App\Http\Controllers\UserController::class, 'update'])->name('users.update');
 });
